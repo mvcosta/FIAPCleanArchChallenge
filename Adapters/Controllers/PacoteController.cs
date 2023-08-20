@@ -19,8 +19,9 @@ namespace Adapters.Controllers
         {
             var pacote = _mapper.Map<Pacote>(pacoteReq);
             var pacoteGateway = new PacoteGateway(dataContext);
+            var estoqueGateway = new EstoqueGateway(dataContext);
 
-            pacote = PacoteUseCase.CreatePacote(pacote, pacoteGateway);
+            pacote = PacoteUseCase.CreatePacote(pacote, pacoteGateway, estoqueGateway);
 
             return _mapper.Map<PacoteResponse>(pacote);
         }

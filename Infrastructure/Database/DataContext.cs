@@ -12,6 +12,7 @@ namespace Database
 
         public DbSet<Pacote> Pacotes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Estoque> EstoqueProdutos { get; set; }
 
     }
 
