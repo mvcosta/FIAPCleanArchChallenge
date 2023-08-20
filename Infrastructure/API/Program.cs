@@ -7,6 +7,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<Adapters.Interfaces.IPacoteController, Adapters.Controllers.PacoteController>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
