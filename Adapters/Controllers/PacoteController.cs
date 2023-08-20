@@ -1,5 +1,5 @@
-using Adapters.AutoMapper;
 using Adapters.DTOs;
+using Adapters.Gateways;
 using Adapters.Interfaces;
 using Application.UseCases;
 using AutoMapper;
@@ -15,11 +15,12 @@ namespace Adapters.Controllers
             var config = new MapperConfiguration(cfg => cfg.AddProfile<AutoMapperProfiles>());
             _mapper = config.CreateMapper();
         }
-        public PacoteResponse CreatePacote(PacoteRequest pacoteReq)
+        public PacoteResponse CreatePacote(PacoteRequest pacoteReq, IDataContext dataContext)
         {
             var pacote = _mapper.Map<Pacote>(pacoteReq);
+            var pacoteGateway = new PacoteGateway(dataContext);
 
-            pacote = PacoteUseCase.CreatePacote(pacote);
+            pacote = PacoteUseCase.CreatePacote(pacote, pacoteGateway);
 
             return _mapper.Map<PacoteResponse>(pacote);
         }

@@ -1,8 +1,9 @@
-using Adapters.DTOs;
 using AutoMapper;
+
+using Adapters.DTOs;
 using Domain.Entities;
 
-namespace Adapters.AutoMapper
+namespace Adapters
 {
     public class AutoMapperProfiles : Profile
     {

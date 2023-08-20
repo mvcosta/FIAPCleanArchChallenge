@@ -1,12 +1,12 @@
+using Application.Interfaces;
 using Domain.Entities;
 
 namespace Application.UseCases;
 public class PacoteUseCase
 {
-    static public Pacote CreatePacote(Pacote pacote)
+    static public Pacote CreatePacote(Pacote pacote, IPacoteGateway pacoteGateway)
     {
-        pacote.Id = 1;
-
+        pacoteGateway.Create(pacote);
         return pacote;
     }
 }

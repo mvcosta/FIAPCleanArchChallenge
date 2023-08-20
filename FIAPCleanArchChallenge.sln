@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "Infrastructure\API\API.csproj", "{027FE530-E527-45D9-8A03-45648FBDB42B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Infrastructure\Database\Database.csproj", "{79EFAF95-17E2-4032-9A2A-8F545FCDBCE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,8 +40,13 @@ Global
 		{027FE530-E527-45D9-8A03-45648FBDB42B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{027FE530-E527-45D9-8A03-45648FBDB42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{027FE530-E527-45D9-8A03-45648FBDB42B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79EFAF95-17E2-4032-9A2A-8F545FCDBCE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79EFAF95-17E2-4032-9A2A-8F545FCDBCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79EFAF95-17E2-4032-9A2A-8F545FCDBCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79EFAF95-17E2-4032-9A2A-8F545FCDBCE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{027FE530-E527-45D9-8A03-45648FBDB42B} = {1D4E69CC-578F-4A43-AE92-24E9C2DB7820}
+		{79EFAF95-17E2-4032-9A2A-8F545FCDBCE7} = {1D4E69CC-578F-4A43-AE92-24E9C2DB7820}
 	EndGlobalSection
 EndGlobal

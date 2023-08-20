@@ -1,4 +1,5 @@
 using Adapters.DTOs;
+using Database;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -8,8 +9,10 @@ namespace API.Controllers;
 public class PacoteController : ControllerBase
 {
     private readonly Adapters.Interfaces.IPacoteController _pacoteController;
-    public PacoteController(Adapters.Interfaces.IPacoteController pacoteController)
+    private readonly DataContext _dbContext;
+    public PacoteController(Adapters.Interfaces.IPacoteController pacoteController, DataContext dataContext)
     {
+        _dbContext = dataContext;
         _pacoteController = pacoteController;
 
     }
@@ -17,6 +20,7 @@ public class PacoteController : ControllerBase
     [HttpPost]
     public ActionResult<PacoteResponse> CreatePacote(PacoteRequest pacote)
     {
-        return _pacoteController.CreatePacote(pacote);
+        _dbContext.SaveChanges();
+        return _pacoteController.CreatePacote(pacote, _dbContext);
     }
 }
